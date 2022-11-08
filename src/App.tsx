@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import UsersPage from './users/users-page/UsersPage';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           Tell me and I forget, teach me and I may remember, involve me and I learn.
         </blockquote>
       </header>
+      <div className="container">
+       <UsersPage />
+      </div>
     </div>
   );
 }

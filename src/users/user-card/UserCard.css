@@ -1,0 +1,8 @@
+.card-column {
+    width: 100%;
+    padding: 2rem;
+}
+
+.card {
+    min-width: 320px;
+}
