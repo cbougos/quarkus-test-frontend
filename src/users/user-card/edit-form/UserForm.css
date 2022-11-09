@@ -5,3 +5,7 @@
 .user-form-button {
     width: 33%;
 }
+
+.user-form-error {
+    min-width: 100%;
+}

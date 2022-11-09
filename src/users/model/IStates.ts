@@ -13,6 +13,14 @@ export interface GreeterState {
   currentEnthusiasm: number;
 }
 
+export interface UserFormError {
+  username: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+}
+
 export interface UserFormState {
-  currentUser: User
+  currentUser: User;
+  error: UserFormError;
 }

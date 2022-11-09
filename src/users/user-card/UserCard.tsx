@@ -46,7 +46,7 @@ class UserCard extends React.Component<UserCardProps, UserCardState> {
             </button>
           </section>
         </div>
-        {this.state.editMode ? (<UserForm {...{user: this.state.user, onSave: this.saveUser, onCancel: this.cancelEditMode}}/>) : (<div></div>)}
+        {this.state.editMode && (<UserForm {...{user: this.state.user, onSave: this.saveUser, onCancel: this.cancelEditMode}}/>)}
       </>
     );
   }
