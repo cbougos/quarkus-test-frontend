@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './UserCard.css'
 import { User } from '../model/User';
 import { UserCardProps } from '../model/IProps';
@@ -28,7 +28,7 @@ class UserCard extends React.Component<UserCardProps, UserCardState> {
     this.setState({editMode: false});
   }
 
-  public render() {
+  public render(): ReactNode {
     return (
       <>
         <div key={this.state.user.id} className="card">

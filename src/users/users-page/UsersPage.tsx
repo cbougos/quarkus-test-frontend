@@ -10,18 +10,28 @@ import { MOCK_USERS } from '../mock/MockUsers';
 class UsersPage extends React.Component<UsersPageProps, UsersPageState> {
   constructor(props: UsersPageProps) {
     super(props);
-    this.state = {users: [...MOCK_USERS]};
+    this.state = {users: [...MOCK_USERS], lastEditedUser: MOCK_USERS[0]};
     this.saveUser = this.saveUser.bind(this);
   }
 
   private saveUser(user: User): void {
-    this.setState({users: [...this.state.users].map(stateUser => stateUser.id === user.id ? user : stateUser)});
+    let lastEditedUser: User = new User({username: 'NOBODY'});
+    this.setState({
+      users: [...this.state.users].map(stateUser => {
+        if (stateUser.id === user.id) {
+          lastEditedUser = user;
+          return user;
+        }
+        return stateUser;
+      }),
+      lastEditedUser
+    });
   }
 
   render(): ReactNode {
     return (
       <>
-        <h1>Users</h1>
+        <h1 className="UserPage-header">Users</h1>
         <div className="UsersPage-body">
           <div className="cards-row row">
             {this.state.users.map(user => (
@@ -31,7 +41,7 @@ class UsersPage extends React.Component<UsersPageProps, UsersPageState> {
             ))}
           </div>
         </div>
-        <Greeter {...{user: this.state.users[0], enthusiasmLevel: 0}} />
+        <Greeter {...{user: this.state.lastEditedUser, enthusiasmLevel: 0}} />
       </>
     );
   }

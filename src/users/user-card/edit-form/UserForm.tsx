@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from 'react';
+import React, { ReactNode, SyntheticEvent } from 'react';
 import './UserForm.css'
 import { UserFormProps } from '../../model/IProps';
 import { UserFormError, UserFormState } from '../../model/IStates';
@@ -43,7 +43,7 @@ class UserForm extends React.Component<UserFormProps, UserFormState> {
     this.props.onSave(this.state.currentUser);
   }
 
-  public render() {
+  public render(): ReactNode {
     return (
       <form className="input-group vertical" onSubmit={this.handleSubmit}>
         <label htmlFor="username">Username</label>

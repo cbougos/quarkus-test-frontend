@@ -1,7 +1,8 @@
 import { User } from './User';
 
 export interface UsersPageState {
-  users: User[]
+  users: User[];
+  lastEditedUser: User;
 }
 
 export interface UserCardState {

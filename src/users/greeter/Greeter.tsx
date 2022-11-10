@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import './Greeter.css';
 import { GreeterProps } from '../model/IProps';
 import { GreeterState } from '../model/IStates';
 
@@ -31,15 +32,13 @@ class Greeter extends React.Component<GreeterProps, GreeterState> {
       throw new Error("You could be a little more enthusiastic! :D");
     }
     return (
-      <>
-        <div className="hello">
-          <div className="greeting">
-            Hello, {this.props.user.username + this.getExclamationMarks(this.state.currentEnthusiasm)}
-          </div>
-          <button onClick={this.onDecrement}>-</button>
-          <button onClick={this.onIncrement}>+</button>
+      <div className="Greeter-body">
+        <div>
+          Hello, {this.props.user.username + this.getExclamationMarks(this.state.currentEnthusiasm)}
         </div>
-      </>
+        <button onClick={this.onDecrement}>-</button>
+        <button onClick={this.onIncrement}>+</button>
+      </div>
     );
   }
 }
